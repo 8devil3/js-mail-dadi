@@ -11,6 +11,8 @@ const chkMailMsgFalse = 'Your email is not registered!';
 const chkMailMsgEmpty = 'Please, enter your email.';
 const chkMailMsgWrong = 'Please, enter a valid email address!';
 
+
+
 // HTML
 btnCheck.addEventListener('click', checkEmailList);
 
@@ -45,28 +47,26 @@ function checkEmailList() {
     }
 
 
+    resultTxt.classList.remove('true', 'false');
+
     if (chkMail == 'empty') {
 
         resultTxt.innerHTML = chkMailMsgEmpty;
-        resultTxt.classList.remove('true');
         resultTxt.classList.add('false');
 
     } else if (chkMail == 'wrong') {
 
         resultTxt.innerHTML = chkMailMsgWrong;
-        resultTxt.classList.remove('true');
         resultTxt.classList.add('false');
 
     } else if (chkMail == false) {
 
         resultTxt.innerHTML = chkMailMsgFalse;
-        resultTxt.classList.remove('true');
         resultTxt.classList.add('false');
 
     } else if (chkMail == true) {
 
         resultTxt.innerHTML = chkMailMsgTrue;
-        resultTxt.classList.remove('false');
         resultTxt.classList.add('true');
     }
 
