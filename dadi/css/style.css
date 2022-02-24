@@ -49,6 +49,11 @@ button {
     margin: 1rem auto;
     font-weight: 600;
     cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background-color: #f80;
 }
 
 p {
