@@ -1,19 +1,15 @@
-// Mail
-// Chiedi all’utente la sua email,
-// controlla che sia nella lista di chi può accedere,
-// stampa un messaggio appropriato sull’esito del controllo.
-
-
 const mailList = ['item1@gmail.com', 'item2@gmail.com', 'item3@gmail.com', 'item4@gmail.com', 'item5@gmail.com'];
 
-let userInputMail = document.querySelector('#mail');
-let btnCheck = document.querySelector('#check');
+const userInputMail = document.querySelector('#mail');
+const btnCheck = document.querySelector('#check');
+const resultTxt = document.querySelector('#result');;
 
 
 let chkMail;
-let chkMailMsgTrue = 'Welcome back!';
-let chkMailMsgFalse = 'Your email is not registered!';
-let chkMailMsgEmpty = 'Please enter your email';
+const chkMailMsgTrue = 'Welcome back!';
+const chkMailMsgFalse = 'Your email is not registered!';
+const chkMailMsgEmpty = 'Please, enter your email.';
+const chkMailMsgWrong = 'Please, enter a valid email address!';
 
 // HTML
 btnCheck.addEventListener('click', checkEmailList);
@@ -23,42 +19,49 @@ btnCheck.addEventListener('click', checkEmailList);
 // function
 function checkEmailList() {
 
-    for (let x = 0; x < mailList.length; x++) {
+    if (userInputMail.value == '') {
 
-        if (userInputMail.value == '') {
-            
-            chkMail = 'empty';
+        chkMail = 'empty';
 
-        } else if (!(/.*@.*/.test(userInputMail.value))) {
+    } else if (!(/.*@.*/.test(userInputMail.value))) {
 
         chkMail = 'wrong';
 
-        } else if (userInputMail.value != mailList[x]) {
+    } else {
 
-            chkMail = false;
+        for (let x = 0; x < mailList.length; x++) {
 
-        } else {
+            if (userInputMail.value == mailList[x]) {
 
-            chkMail = true;
+                chkMail = true;
+                break;
+
+            } else {
+
+                chkMail = false;
+
+            }
         }
     }
 
 
     if (chkMail == 'empty') {
 
-        console.log(chkMailMsgEmpty);
+        resultTxt.innerHTML = chkMailMsgEmpty;
 
     } else if (chkMail == 'wrong') {
 
-        console.log('wrong');
-        
+        resultTxt.innerHTML = chkMailMsgWrong;
+
     } else if (chkMail == false) {
-        
-        console.log(chkMailMsgFalse);
 
-    } else {
+        resultTxt.innerHTML = chkMailMsgFalse;
 
-        console.log(chkMailMsgTrue);
+    } else if (chkMail == true) {
+
+        resultTxt.innerHTML = chkMailMsgTrue;
     }
+
+    chkMail = undefined;
 }
 
