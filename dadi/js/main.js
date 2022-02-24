@@ -18,15 +18,20 @@ btnRollDice.addEventListener('click', diceRoll);
 // function
 function diceRoll() {
 
+    // numeri random
     let player1DiceNumber = Math.floor(Math.random() * 6) + 1;
     let player2DiceNumber = Math.floor(Math.random() * 6) + 1;
 
+    // imposto i messaggi dei numeri dei dadi
     player1DiceNumberHTML.innerHTML = 'Player 1 number is: ' + player1DiceNumber;
     player2DiceNumberHTML.innerHTML = 'Player 2 number is: ' + player2DiceNumber;
 
+    // reset classi
     player1DiceNumberHTML.classList.remove('win', 'lose', 'draw');
     player2DiceNumberHTML.classList.remove('win', 'lose', 'draw');
 
+
+    // condizioni e messaggi vittoria/sconfitta
     if (player1DiceNumber == player2DiceNumber) {
 
         winnerHTML.innerHTML = drawMsg;
