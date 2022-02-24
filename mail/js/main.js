@@ -48,21 +48,25 @@ function checkEmailList() {
     if (chkMail == 'empty') {
 
         resultTxt.innerHTML = chkMailMsgEmpty;
+        resultTxt.classList.remove('true');
         resultTxt.classList.add('false');
 
     } else if (chkMail == 'wrong') {
 
         resultTxt.innerHTML = chkMailMsgWrong;
+        resultTxt.classList.remove('true');
         resultTxt.classList.add('false');
 
     } else if (chkMail == false) {
 
         resultTxt.innerHTML = chkMailMsgFalse;
+        resultTxt.classList.remove('true');
         resultTxt.classList.add('false');
 
     } else if (chkMail == true) {
 
         resultTxt.innerHTML = chkMailMsgTrue;
+        resultTxt.classList.remove('false');
         resultTxt.classList.add('true');
     }
 
