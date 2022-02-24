@@ -48,18 +48,22 @@ function checkEmailList() {
     if (chkMail == 'empty') {
 
         resultTxt.innerHTML = chkMailMsgEmpty;
+        resultTxt.classList.add('false');
 
     } else if (chkMail == 'wrong') {
 
         resultTxt.innerHTML = chkMailMsgWrong;
+        resultTxt.classList.add('false');
 
     } else if (chkMail == false) {
 
         resultTxt.innerHTML = chkMailMsgFalse;
+        resultTxt.classList.add('false');
 
     } else if (chkMail == true) {
 
         resultTxt.innerHTML = chkMailMsgTrue;
+        resultTxt.classList.add('true');
     }
 
     chkMail = undefined;

@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    background-color: #1a1a1a;
+    color: #fff;
+
+    --orange: #f60;
+    --brown: #a40;
+    --yellow: #e6b20a;
+    --grey: #2a2a2a;
+
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    font-size: 16px;
+}
+
+
+img {
+    display: block;
+    margin: 1rem auto;
+    height: 4rem;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 0.8rem;
+    font-size: 1.5rem;
+}
+
+.container {
+    text-align: center;
+    padding: 1rem;
+    margin: 10rem auto 0 auto;
+    max-width: 350px;
+    min-height: 128px;
+}
+
+button {
+    display: block;
+    border: 0;
+    background-color: var(--orange);
+    border-radius: 100px;
+    padding: 0.5rem 0.8rem;
+    color: white;
+    text-transform: uppercase;
+    margin: 1rem auto;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+input[type="email"] {
+    height: 2rem;
+    color: var(--grey);
+    border-radius: 100px;
+    width: 100%;
+    padding: 0 1rem;
+    border: 0;
+}
+
+input[type="email"]::placeholder {
+    color: #999;
+}
+
+input[type="email"]:focus-visible{
+    outline: 2px var(--orange) solid;
+}
+
+.false{
+    color: #ff6666;
+    font-weight: 600;
+}
+
+.true {
+    color: #68d368;
+    font-weight: 600;
+}
