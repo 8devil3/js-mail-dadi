@@ -6,11 +6,11 @@ if (numberPlayer1 == numberPlayer2) {
 
     console.log('Draw!');
 
-} else if (numberPlayer1 < numberPlayer2) {
+} else if (numberPlayer1 > numberPlayer2) {
 
-    console.log('Player 2 win!');
+    console.log('Player 1 win!');
 
 } else {
 
-    console.log('Player 1 win!');
+    console.log('Player 2 win!');
 }

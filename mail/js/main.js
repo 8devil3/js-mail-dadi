@@ -5,27 +5,60 @@
 
 
 const mailList = ['item1@gmail.com', 'item2@gmail.com', 'item3@gmail.com', 'item4@gmail.com', 'item5@gmail.com'];
-let userInputMail = 'item2@gmail.com';
 
-let chkMail = false;
-let chkMailMsgTrue = 'Bentornato!';
-let chkMailMsgFalse = 'La tua email non è registrata!';
+let userInputMail = document.querySelector('#mail');
+let btnCheck = document.querySelector('#check');
 
 
-for (let x = 0; x < mailList.length; x++) {
-    
-    if (userInputMail == mailList[x]) {
-        chkMail = true;
+let chkMail;
+let chkMailMsgTrue = 'Welcome back!';
+let chkMailMsgFalse = 'Your email is not registered!';
+let chkMailMsgEmpty = 'Please enter your email';
+
+// HTML
+btnCheck.addEventListener('click', checkEmailList);
+
+
+
+// function
+function checkEmailList() {
+
+    for (let x = 0; x < mailList.length; x++) {
+
+        if (userInputMail.value == '') {
+            
+            chkMail = 'empty';
+
+        } else if (!(/.*@.*/.test(userInputMail.value))) {
+
+        chkMail = 'wrong';
+
+        } else if (userInputMail.value != mailList[x]) {
+
+            chkMail = false;
+
+        } else {
+
+            chkMail = true;
+        }
     }
-}
 
 
-if (chkMail == true) {
-    
-    console.log(chkMailMsgTrue);
-    
-} else {
+    if (chkMail == 'empty') {
 
-    console.log(chkMailMsgFalse);
+        console.log(chkMailMsgEmpty);
+
+    } else if (chkMail == 'wrong') {
+
+        console.log('wrong');
+        
+    } else if (chkMail == false) {
+        
+        console.log(chkMailMsgFalse);
+
+    } else {
+
+        console.log(chkMailMsgTrue);
+    }
 }
 
