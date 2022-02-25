@@ -4,7 +4,6 @@ const userInputMail = document.querySelector('#mail');
 const btnCheck = document.querySelector('#check');
 const resultTxt = document.querySelector('#result');;
 
-let chkMail;
 const chkMailMsgTrue = 'Welcome back!';
 const chkMailMsgFalse = 'Your email is not registered!';
 const chkMailMsgEmpty = 'Please, enter your email.';
@@ -18,6 +17,8 @@ btnCheck.addEventListener('click', checkEmailList);
 // function
 function checkEmailList() {
 
+    let chkMail = false;
+
     if (userInputMail.value == '') { // controllo input vuoto
         chkMail = 'empty';
     } else if (!(/.*@.*/.test(userInputMail.value))) { // controllo input email non valida (controllo solo la presenza di '@')
@@ -26,9 +27,6 @@ function checkEmailList() {
         for (let x = 0; x < mailList.length; x++) { // controllo nella lista mail
             if (userInputMail.value == mailList[x]) {
                 chkMail = true;
-                break;
-            } else {
-                chkMail = false;
             }
         }
     }
@@ -50,8 +48,5 @@ function checkEmailList() {
         resultTxt.innerHTML = chkMailMsgTrue;
         resultTxt.classList.add('true');
     }
-
-    // reset variabile
-    chkMail = undefined;
 }
 
